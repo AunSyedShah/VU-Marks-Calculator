@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Marks Calculator</title>
+    <script>
+        // calculate GDB Percentage
+        const gdb_percentage = () => {
+            const gdb_obtained = document.getElementById('gdb_obtained').value;
+            const gdb_total = document.getElementById('gdb_total').value;
+            const gdb_percentage = (gdb_obtained / gdb_total) * document.getElementById('gdb_percentage').value;
+            return gdb_percentage;
+        }
+        const quiz_percentage = () => {
+            const quiz_obtained = document.getElementById('quiz_obtained').value;
+            const quiz_total = document.getElementById('quiz_total').value;
+            const quiz_percentage = (quiz_obtained / quiz_total) * document.getElementById('quiz_percentage').value;
+            return quiz_percentage;
+        }
+        const assignment_percentage = () => {
+            const assignment_obtained = document.getElementById('assignment_obtained').value;
+            const assignment_total = document.getElementById('assignment_total').value;
+            const assignment_percentage = (assignment_obtained / assignment_total) * document.getElementById('assignment_percentage').value;
+            return assignment_percentage;
+        }
+        const midterm_percentage = () => {
+            const midterm_obtained = document.getElementById('midterm_obtained').value;
+            const midterm_total = document.getElementById('midterm_total').value;
+            const midterm_percentage = (midterm_obtained / midterm_total) * document.getElementById('midterm_percentage').value;
+            return midterm_percentage;
+        }
+        const rest_marks = () => {
+            // convert to integer
+            return (gdb_percentage() + quiz_percentage() + assignment_percentage() + midterm_percentage());
+        }
+        alert(`You have ${rest_marks().toFixed(2)}% rest marks`);
+    </script>
+</head>
+
+<body>
+    <h1>Marks Calcualtor</h1>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="gdb_obtained">GDB Obtained</label>
+                <input type="number" class="form-control" id="gdb_obtained" placeholder="Enter GDB Obtained">
+            </div>
+            <div class="form-group">
+                <label for="gdb_total">GDB Total</label>
+                <input type="number" class="form-control" id="gdb_total" placeholder="Enter GDB Total">
+            </div>
+            <div class="form-group">
+                <label for="gdb_percentage">GDB Percentage</label>
+                <input type="number" class="form-control" id="gdb_percentage" placeholder="Enter GDB Percentage">
+            </div>
+            <!-- Quiz Obtained-->
+            <div class="form-group">
+                <label for="quiz_obtained">Quiz Obtained</label>
+                <input type="number" class="form-control" id="quiz_obtained" placeholder="Enter Quiz Obtained">
+            </div>
+            <!-- Quiz Total-->
+            <div class="form-group">
+                <label for="quiz_total">Quiz Total</label>
+                <input type="number" class="form-control" id="quiz_total" placeholder="Enter Quiz Total">
+            </div>
+            <!-- Quiz Percentage-->
+            <div class="form-group">
+                <label for="quiz_percentage">Quiz Percentage</label>
+                <input type="number" class="form-control" id="quiz_percentage" placeholder="Enter Quiz Percentage">
+            </div>
+            <!-- Assignment Obtained-->
+            <div class="form-group">
+                <label for="assignment_obtained">Assignment Obtained</label>
+                <input type="number" class="form-control" id="assignment_obtained"
+                    placeholder="Enter Assignment Obtained">
+            </div>
+            <!-- Assignment Total-->
+            <div class="form-group">
+                <label for="assignment_total">Assignment Total</label>
+                <input type="number" class="form-control" id="assignment_total" placeholder="Enter Assignment Total">
+            </div>
+            <!-- Assignment Percentage-->
+            <div class="form-group">
+                <label for="assignment_percentage">Assignment Percentage</label>
+                <input type="number" class="form-control" id="assignment_percentage"
+                    placeholder="Enter Assignment Percentage">
+            </div>
+            <!-- Midterm Obtained-->
+            <div class="form-group">
+                <label for="midterm_obtained">Midterm Obtained</label>
+                <input type="number" class="form-control" id="midterm_obtained" placeholder="Enter Midterm Obtained">
+            </div>
+            <!-- Midterm Total-->
+            <div class="form-group">
+                <label for="midterm_total">Midterm Total</label>
+                <input type="number" class="form-control" id="midterm_total" placeholder="Enter Midterm Total">
+            </div>
+            <!-- Midterm Percentage-->
+            <div class="form-group">
+                <label for="midterm_percentage">Midterm Percentage</label>
+                <input type="number" class="form-control" id="midterm_percentage"
+                    placeholder="Enter Midterm Percentage">
+            </div>
+            <button type="button" class="btn btn-primary"
+                onclick="alert(`You have ${rest_marks()}% rest marks`)">Calculate</button>
+        </form>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
