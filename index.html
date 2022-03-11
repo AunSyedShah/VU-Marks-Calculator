@@ -12,12 +12,6 @@
 
     <title>Marks Calculator</title>
     <script>
-        const midterm_weightage_percentage = 30;
-        const quiz_weightage_percentage = 5;
-        const assignment_weightage_percentage = 10;
-        const gdb_weightage_percentage = 5;
-
-        // calculate GDB Percentage
         const gdb_percentage = () => {
             const gdb_obtained = document.getElementById('gdb_obtained').value;
             const gdb_total = document.getElementById('gdb_total').value;
@@ -46,12 +40,13 @@
             return (gdb_percentage() + quiz_percentage() + assignment_percentage() + midterm_percentage());
         }
 
-        const assgn_10_q_5_gdb_5_midterm_30 = (assgn_obt, quiz_obt, gdb_obt, midterm_obt) => {
-            const assgn_percentage = (assgn_obt / 10) * assignment_weightage_percentage;
-            const quiz_percentage = (quiz_obt / 5) * quiz_weightage_percentage;
-            const gdb_percentage = (gdb_obt / 5) * gdb_weightage_percentage;
-            const midterm_percentage = (midterm_obt / 30) * midterm_weightage_percentage;
-            return (assgn_percentage + quiz_percentage + gdb_percentage + midterm_percentage);
+        // if rest_marks are greater than 20%
+        const rest_marks_greater_than_20 = () => {
+            if (rest_marks() >= 20) {
+                alert(`You have passed the the pre-mids activities. Your rest marks are ${rest_marks().toFixed(2)}%.`);
+            } else {
+                alert(`You have failed the pre-mids activity. Your rest marks are ${rest_marks().toFixed(2)}%.`);
+            }
         }
     </script>
 </head>
@@ -136,7 +131,7 @@
                     placeholder="Enter Midterm Percentage">
             </div>
             <button type="button" class="btn btn-primary"
-                onclick="alert(`You have ${rest_marks().toFixed(2)}% rest marks`)">Calculate</button>
+                onclick="rest_marks_greater_than_20()">Calculate</button>
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
